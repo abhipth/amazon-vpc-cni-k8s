@@ -89,7 +89,7 @@ var _ = Describe("[CANARY] test service connectivity", func() {
 		fmt.Fprintf(GinkgoWriter, "created service\n: %+v\n", service.Status)
 
 		By("sleeping for some time to allow service to become ready")
-		time.Sleep(utils.PollIntervalLong)
+		time.Sleep(utils.PollIntervalLong * 2)
 
 		testerContainer = manifest.NewBusyBoxContainerBuilder().
 			Command([]string{"wget"}).
